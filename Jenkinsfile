@@ -9,6 +9,9 @@ pipeline {
                     reuseNode true
                 }
             }
+            environment {
+                npm_config_cache = './.npm-cache' // Avoid permission issue
+            }
             steps {
                 sh '''
                     ls -la
